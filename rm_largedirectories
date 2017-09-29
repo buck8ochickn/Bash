@@ -1,0 +1,15 @@
+#!/bin/sh
+#this script will rm the contents of a directory that is to big to rm
+#by Blank
+read -p 'Please give the full path to the directory you would like to remove: ' Input
+count=0
+for file in `find $Input`;
+do rm -f "$file";
+count=$((count+1))
+echo "$file"
+echo $count
+done
+
+#echo "$count files have been removed in $input"
+exit;
+
