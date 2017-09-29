@@ -1,0 +1,17 @@
+
+#!/bin/sh
+# to get ride of the Directadmin ticket files 
+#rm all but the last two folders
+#place in /etc/cron.monthly
+#
+#working directory
+wd="/usr/local/directadmin/data/tickets/"
+l=$(ls $wd | wc -l)
+for i in  $(ls -v $wd)
+do
+if [ ! $(($l)) -lt 3 ]
+then
+rm -rf "$wd$i"
+fi
+l=$(($l-1))
+done
