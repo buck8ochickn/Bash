@@ -15,3 +15,6 @@ rm -rf "$wd$i"
 fi
 l=$(($l-1))
 done
+cp /usr/local/directadmin/data/admin/tickets.list /usr/local/directadmin/data/admin/tickets.list.backup
+tail -n 500 /usr/local/directadmin/data/admin/tickets.list.backup > /usr/local/directadmin/data/admin/tickets.list
+rm /usr/local/directadmin/data/admin/tickets.list.backup
