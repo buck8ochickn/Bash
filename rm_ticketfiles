@@ -1,5 +1,8 @@
 
 #!/bin/sh
+#recommended permissions you can go stricter if you want
+#chown root:root
+#chmod 755
 # to get ride of the Directadmin ticket files 
 #rm all but the last two folders
 #place in /etc/cron.monthly
