@@ -4,6 +4,24 @@
 #
 #
 
+#################################################
+###
+#    Cent OS 
+#
+#
+
+function centos6 {
+echo "exec /usr/bin/logger -p authpriv.notice -t init "Ctrl-Alt-Del was pressed and ignored"" > /etc/init/control-alt-delete.override
+}
+
+
+
+
+
+
+
+
+
 clear
 
 echo -e "this script will need sudo\n"
@@ -27,12 +45,4 @@ case $input in
     ;;
 esac
 
-#################################################
-###
-#    Cent OS 
-#
-#
 
-function centos6 {
-echo "exec /usr/bin/logger -p authpriv.notice -t init "Ctrl-Alt-Del was pressed and ignored"" > /etc/init/control-alt-delete.override
-}
