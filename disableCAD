@@ -7,7 +7,7 @@
 #################################################
 ###
 #    Cent OS 
-#
+# 
 #
 
 function centos6 {
@@ -15,21 +15,15 @@ echo "exec /usr/bin/logger -p authpriv.notice -t init "Ctrl-Alt-Del was pressed 
 }
 
 
-
-
-
-
-
-
-
+###################
 clear
 
-echo -e "this script will need sudo\n"
-read -p "[press any key]"
+echo -e "This script will disable control-alt-del on verious operating systems.\nthis script will need sudo\n"
+read -p "[press any key]:"
 
 cat /etc/*release
 
-echo -e "what version of linux are you using (1. centos 6.x) \n [enter a number]"
+echo -e "what version of linux are you using (0. exit, 1. centos 6.x) \n [enter a number]:"
 read -p " " input 
 
 case $input in 
