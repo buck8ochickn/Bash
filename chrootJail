@@ -1,0 +1,32 @@
+#!/bin/bash
+
+
+
+#add the user and group
+groupadd sshJailedusers
+adduser -g sshJailedusers $username
+
+
+Match group sshusers
+          ChrootDirectory /var/jail/
+          X11Forwarding no
+          AllowTcpForwarding no
+
+
+#for moving libs 
+read -p "what is the lib file full path" input
+
+if ls /SECURE/Jail/lib64/$input
+then echo "true"
+else
+echo "false"
+cp -v /usr/lib64/$input /SECURE/Jail/lib64/
+fi
+
+#added to /etc/sshd/sshconfig
+Match group sshusers
+          ChrootDirectory /var/jail/
+          X11Forwarding no
+          AllowTcpForwarding no
+
+systemctl restart sshd
