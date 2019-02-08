@@ -16,5 +16,5 @@ sign csr requests
 openssl x509 -req -in certreqest.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out newcert.crt -days 500 -sha256
 ~~~
 
-install your self signed cert
+install your self signed cert on hosts you need your new cert to work on
 
